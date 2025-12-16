@@ -1,0 +1,19 @@
+{
+  "name": "botao-gpio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/botao.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/botao.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "onoff": "^6.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}

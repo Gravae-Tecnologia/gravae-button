@@ -17,12 +17,11 @@ export type SiteConfig = {
 export type ButtonConfig = string[];
 
 export const SITE: SiteConfig = {
-  apiKey: "1234",
+  apiKey: "123456",
   groupKey: "ArenaVarandas",
 };
 
 export const BUTTONS: Partial<Record<GPIO, ButtonConfig>> = {
-  13: ["quadra03_camera01"],
-  19: ["quadra02_camera01", "quadra02_camera02"],
-  26: ["quadra01_camera01", "quadra01_camera02"],
+  "19": ["quadra02_camea01", "quadra02_camea02"],
+  "26": ["quadra01_camea01", "quadra01_camea02"],
 };

@@ -2,7 +2,16 @@ import { Gpio } from "onoff";
 import axios from "axios";
 import fs from "node:fs";
 import path from "node:path";
-import { SITE, BUTTONS, SHINOBI_BASE_URL, DEBOUNCE_MS, COOLDOWN_MS, HTTP_TIMEOUT_MS, REGION_NAME, CONFIDENCE } from "./config.js";
+import {
+  SITE,
+  BUTTONS,
+  SHINOBI_BASE_URL,
+  DEBOUNCE_MS,
+  COOLDOWN_MS,
+  HTTP_TIMEOUT_MS,
+  REGION_NAME,
+  CONFIDENCE,
+} from "./config.js";
 import type { GPIO, SiteConfig, ButtonConfig } from "./config.js";
 
 const LOG_DIR = path.resolve(process.cwd(), "logs");
@@ -16,36 +25,6 @@ function logPress(name: string, pin: number) {
   const line = `${new Date().toISOString()} - pin:${pin} - ${name}\n`;
   logLine("button_presses_details.txt", line);
 }
-
-// ========================== CONFIG ==========================
-// const SITE: SiteConfig = {
-//   apiKey: "BfXF0LOk10eFqltdZtlu3VslrttTyL",
-//   groupKey: "ElMirador",
-// };
-
-// const BUTTONS: Partial<Record<GPIO, ButtonConfig>> = {
-//   "6": {
-//     monitorSlugs: [
-//       "cancha04_camera01",
-//       "cancha04_camera02",
-//       "cancha04_camera03",
-//     ],
-//   },
-//   "26": { monitorSlugs: ["cancha01_camera01"] },
-//   "19": { monitorSlugs: ["cancha02_camera01"] },
-//   "13": { monitorSlugs: ["cancha03_camera01"] },
-// };
-
-// const SHINOBI_BASE_URL = "http://127.0.0.1:8080";
-
-// const DEBOUNCE_MS = 200;
-// const COOLDOWN_MS = 5000;
-// const HTTP_TIMEOUT_MS = 3000;
-
-// Alinhado à doc de monitor triggers (payload JSON)
-// const REGION_NAME = "gpio_button";
-// const CONFIDENCE = 197.4755859375;
-// ============================================================
 
 const cooldownExpire: Record<number, number> = {};
 const gpios: Record<number, Gpio> = {};
@@ -92,7 +71,8 @@ function setupPin(pin: GPIO, cfg: ButtonConfig) {
     if (now < cooldownExpire[pin]) return;
     cooldownExpire[pin] = now + COOLDOWN_MS;
 
-    for (const monitorSlug of cfg.monitorSlugs) {
+    // cfg agora é um array de monitor slugs
+    for (const monitorSlug of cfg) {
       const name = monitorSlug;
       const url = buildUrl(SITE, monitorSlug);
 

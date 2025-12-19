@@ -14,9 +14,7 @@ export type SiteConfig = {
   groupKey: string;
 };
 
-export type ButtonConfig = {
-  monitorSlugs: string[];
-};
+export type ButtonConfig = string[];
 
 export const SITE: SiteConfig = {
   apiKey: "1234",
@@ -24,13 +22,7 @@ export const SITE: SiteConfig = {
 };
 
 export const BUTTONS: Partial<Record<GPIO, ButtonConfig>> = {
-  "13": {
-    monitorSlugs: ["quadra03_camera01"],
-  },
-  "19": {
-    monitorSlugs: ["quadra02_camera01", "quadra02_camera02"],
-  },
-  "26": {
-    monitorSlugs: ["quadra01_camera01", "quadra01_camera02"],
-  },
+  13: ["quadra03_camera01"],
+  19: ["quadra02_camera01", "quadra02_camera02"],
+  26: ["quadra01_camera01", "quadra01_camera02"],
 };

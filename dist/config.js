@@ -9,21 +9,12 @@ export const SITE = {
     groupKey: "ArenaVarandas",
 };
 export const BUTTONS = {
-    "13": {
-        "monitorSlugs": [
-            "quadra03_camera01"
-        ]
-    },
-    "19": {
-        "monitorSlugs": [
-            "quadra02_camera01",
-            "quadra02_camera02"
-        ]
-    },
-    "26": {
-        "monitorSlugs": [
-            "quadra01_camera01",
-            "quadra01_camera02"
-        ]
-    }
+    "19": [
+        "quada02_camea01",
+        "quada02_camea02"
+    ],
+    "26": [
+        "quada01_camea01",
+        "quada01_camea02"
+    ]
 };

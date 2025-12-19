@@ -60,7 +60,7 @@ yarn button:config
 - Edite `src/config.ts` diretamente. O arquivo contém tipos e constantes:
 
 - SITE: apiKey e groupKey
-- BUTTONS: mapa parcial de pinos → { monitorSlugs: string[] }
+- BUTTONS: mapa parcial de pinos → cada pino mapeia para um array de monitorSlugs (string[])
 - SHINOBI_BASE_URL, DEBOUNCE_MS, COOLDOWN_MS, HTTP_TIMEOUT_MS, REGION_NAME, CONFIDENCE
 
 Exemplo (manual):
@@ -72,10 +72,10 @@ export const SITE = {
 };
 
 export const BUTTONS = {
-  26: { monitorSlugs: ["cancha01_camera01"] },
-  19: { monitorSlugs: ["cancha02_camera01"] },
-  13: { monitorSlugs: ["cancha03_camera01"] },
-  6: { monitorSlugs: ["cancha04_camera01", "cancha04_camera02"] },
+  26: ["cancha01_camera01"],
+  19: ["cancha02_camera01"],
+  13: ["cancha03_camera01"],
+  6: ["cancha04_camera01", "cancha04_camera02"],
 };
 ```
 

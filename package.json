@@ -5,7 +5,7 @@
   "type": "module",
   "main": "dist/botao.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && node ./scripts/postbuild.mjs",
     "start": "node dist/botao.js",
     "button:config": "node ./scripts/configure.mjs"
   },

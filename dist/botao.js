@@ -2,7 +2,7 @@ import { Gpio } from "onoff";
 import axios from "axios";
 import fs from "node:fs";
 import path from "node:path";
-import { SITE, BUTTONS, SHINOBI_BASE_URL, DEBOUNCE_MS, COOLDOWN_MS, HTTP_TIMEOUT_MS, REGION_NAME, CONFIDENCE, } from "./config";
+import { SITE, BUTTONS, SHINOBI_BASE_URL, DEBOUNCE_MS, COOLDOWN_MS, HTTP_TIMEOUT_MS, REGION_NAME, CONFIDENCE } from "./config.js";
 const LOG_DIR = path.resolve(process.cwd(), "logs");
 if (!fs.existsSync(LOG_DIR))
     fs.mkdirSync(LOG_DIR, { recursive: true });

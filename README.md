@@ -1,8 +1,8 @@
-# botao-gpio → Shinobi (Raspberry Pi)
+# gravae-button → Shinobi (Raspberry Pi)
 
 Serviço em **TypeScript/Node.js** para Raspberry Pi que monitora botões físicos via **GPIO** e dispara o endpoint de **motion trigger** do **Shinobi** (por padrão em `http://127.0.0.1:8080`) para um ou mais monitores.
 
-Repo: https://github.com/Gravae-Tecnologia/botao-gpio
+Repo: https://github.com/Gravae-Tecnologia/gravae-button
 
 ## O que ele faz
 
@@ -28,8 +28,8 @@ Repo: https://github.com/Gravae-Tecnologia/botao-gpio
 ## Instalação
 
 ```bash
-git clone https://github.com/Gravae-Tecnologia/botao-gpio
-cd botao-gpio
+git clone https://github.com/Gravae-Tecnologia/gravae-button
+cd gravae-button
 yarn
 ```
 
@@ -130,7 +130,7 @@ pm2 list
 ou (modo compatível com npm script):
 
 ```bash
-pm2 start "npm run start" --name botao-gpio
+pm2 start "npm run start" --name gravae-button
 pm2 save
 ```
 
@@ -139,7 +139,7 @@ pm2 save
 ```bash
 pm2 logs botao
 # ou
-pm2 logs botao-gpio
+pm2 logs gravae-button
 ```
 
 ### Restart / Stop

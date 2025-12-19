@@ -39,7 +39,7 @@ yarn
 
 A configuração agora fica em `src/config.ts`. Há duas formas de editar:
 
-1) Interativo (recomendado)
+1. Interativo (recomendado)
 
 - Execute:
 
@@ -55,7 +55,7 @@ yarn button:config
 26 | 19 | 13 | 6 | 5 | 21 | 20 | 16
 ```
 
-2) Manual
+2. Manual
 
 - Edite `src/config.ts` diretamente. O arquivo contém tipos e constantes:
 
@@ -75,7 +75,7 @@ export const BUTTONS = {
   26: { monitorSlugs: ["cancha01_camera01"] },
   19: { monitorSlugs: ["cancha02_camera01"] },
   13: { monitorSlugs: ["cancha03_camera01"] },
-  6:  { monitorSlugs: ["cancha04_camera01", "cancha04_camera02"] },
+  6: { monitorSlugs: ["cancha04_camera01", "cancha04_camera02"] },
 };
 ```
 
@@ -163,6 +163,7 @@ pm2 save
 
 - Arquivo: `logs/button_presses_details.txt`
 - Formato:
+
 ```
 2025-12-16T13:10:00.123Z - cancha04_camera01
 ```
